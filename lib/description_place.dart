@@ -87,7 +87,7 @@ class DescriptionPlace extends StatelessWidget {
           )
         ), Row( //NECESARIO PARA LA 1 FORMA
           children: [
-            star,star,star,star_border,star_border
+            star,star,star,star,star
           ],
         )
       ],
