@@ -4,20 +4,21 @@ class Review extends StatelessWidget {
   String pathImg = "assets/img/one_piece.png";
   String name = "Luffy";
   String details = "1 review 5 photos";
+  double numStar =  5;
   String coment = "El pirata que se covertira en el rey dee los piratas";
 
-  Review(this.pathImg, this.name, this.details, this.coment);
+  Review(this.pathImg, this.name, this.details, this.numStar, this.coment);
 
   @override
   Widget build(BuildContext context) {
 
     final userComent = Container(
-       margin: EdgeInsets.only(
+       margin: const EdgeInsets.only(
         left: 20.0
       ),
       child: Text(
         coment, textAlign: TextAlign.left,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: "Lato",
           fontSize: 13.0,
           fontWeight: FontWeight.w900
@@ -26,12 +27,12 @@ class Review extends StatelessWidget {
     );
 
     final userInfo = Container(
-       margin: EdgeInsets.only(
+       margin: const EdgeInsets.only(
         left: 20.0
       ),
       child: Text(
         details, textAlign: TextAlign.left,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: "Lato",
           fontSize: 13.0,
           color: Color(0xFFa3a5a7)
@@ -41,15 +42,39 @@ class Review extends StatelessWidget {
 
 
     final userName = Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 20.0
       ),
       child: Text(
         name, textAlign: TextAlign.left,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: "Lato",
           fontSize: 17.0
         )  ,
+      ),
+    );
+
+    final starUser = Container(
+      margin: const EdgeInsets.only(
+        left: 10.0
+      ),
+      child: const Icon(
+        Icons.star,
+        color: Color(0xFFf2C611),
+        size: 15.0,
+      ), 
+    );
+
+  //retroalimentacion de este pedazo de codigo
+    final List<Widget> starWidgets = List.generate(
+      numStar.round(),
+      (index) => Container(
+        margin: const EdgeInsets.only(left: 10.0),
+        child: const Icon(
+          Icons.star,
+          color: Color(0xFFf2C611),
+          size: 15.0,
+        ),
       ),
     );
 
@@ -58,7 +83,9 @@ class Review extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,  
       children: [
         userName,
-        userInfo,
+        Row(
+          children: [userInfo, ...starWidgets]
+          ),
         userComent
       ],
     );

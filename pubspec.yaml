@@ -28,6 +28,12 @@ flutter:
 
   assets:
     - assets/img/one_piece.png
+    - assets/img/sanji.png
+    - assets/img/chopper.png
+    - assets/img/nami.png
+    - assets/img/zoro.png
+    - assets/img/usopp.png
+
 
   fonts:
     - family: Lato

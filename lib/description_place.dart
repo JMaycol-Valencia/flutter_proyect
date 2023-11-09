@@ -38,7 +38,7 @@ class DescriptionPlace extends StatelessWidget {
 
     final star = Container(
       margin: const EdgeInsets.only(
-        top: 323.0,
+        top: 273.0,
         right: 3.0
       ),
       child: const Icon(
@@ -72,7 +72,7 @@ class DescriptionPlace extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: const EdgeInsets.only(
-            top: 320.0,
+            top: 270.0,
             left: 20.0,
             right: 20.0,
           ),
@@ -85,11 +85,7 @@ class DescriptionPlace extends StatelessWidget {
             ),
             textAlign: TextAlign.left,
           )
-        ), Row( //NECESARIO PARA LA 1 FORMA
-          children: [
-            star,star,star,star,star
-          ],
-        )
+        ), star,star,star,star,star
       ],
     );
 
