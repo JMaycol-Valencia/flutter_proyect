@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'button_purple.dart';
 
 class DescriptionPlace extends StatelessWidget {
   //VARIABLES QUE USAREMOS
@@ -38,7 +39,7 @@ class DescriptionPlace extends StatelessWidget {
 
     final star = Container(
       margin: const EdgeInsets.only(
-        top: 273.0,
+        top: 353.0,
         right: 3.0
       ),
       child: const Icon(
@@ -72,7 +73,7 @@ class DescriptionPlace extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: const EdgeInsets.only(
-            top: 270.0,
+            top: 350.0,
             left: 20.0,
             right: 20.0,
           ),
@@ -91,9 +92,11 @@ class DescriptionPlace extends StatelessWidget {
 
   //1 forma de ordenar los widgets
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         titleStars,
-        description
+        description,
+        ButtonPurple("Episodios")
       ],
     );
     //2 forma de conseguir un buen resultado

@@ -27,12 +27,17 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/img/one_piece.png
+    - assets/img/luffy.png
     - assets/img/sanji.png
     - assets/img/chopper.png
     - assets/img/nami.png
     - assets/img/zoro.png
     - assets/img/usopp.png
+    - assets/img/one-piece.png
+    - assets/img/dbz.png
+    - assets/img/hxh.png
+    - assets/img/snk.png
+    - assets/img/naruto.png
 
 
   fonts:
