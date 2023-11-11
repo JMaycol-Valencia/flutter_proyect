@@ -10,7 +10,7 @@ class DescriptionPlace extends StatelessWidget {
   //CONSTRUCTOR QUE RECIBIRA LAS VARIABLES
   DescriptionPlace(this.namePLace, this.stars, this.descriptionPlace);
 
-  String descriptionDummy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. \n\nDonec auctor, nisl vitae tincidunt tincidunt, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nisl. Donec auctor, nisl vitae tincidunt tincidunt, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nisl.";
+  
 
   @override
   Widget build(BuildContext context) {

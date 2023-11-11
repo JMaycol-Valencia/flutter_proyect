@@ -25,7 +25,7 @@ class _FloatinBtn extends State<FloatinBtn>{
     // TODO: implement build
     return FloatingActionButton(
       mini: true,
-      backgroundColor :Color(0xFF11DA53),
+      backgroundColor :Color(0xFF872341),
       tooltip : "Fav", //propiedad para ver el nombre dl boton flotante
       onPressed: onPressedFav,
       child: const Icon(

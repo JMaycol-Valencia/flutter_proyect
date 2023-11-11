@@ -10,6 +10,7 @@ class ReviewList extends StatelessWidget{
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Review("assets/img/luffy.png","Luffy","rey de los piratas",5,"amante de la carne"), 
         Review("assets/img/nami.png","Nami","Navegante",4,"Amante del dinero"),
         Review("assets/img/zoro.png","Zoro","El mejor espadachin",5,"Le gusta el alcohol"),
         Review("assets/img/sanji.png","Sanji","El mejor cocinero",5,"Amante de las mujeres"),
