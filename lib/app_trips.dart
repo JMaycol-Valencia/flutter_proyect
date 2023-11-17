@@ -13,14 +13,19 @@ class AppTrips extends StatefulWidget{
 }
 
 class _AppTrips extends State<AppTrips>{
+  //VARIABLES NECESARIAS
   int indexTap = 0;
+  //LISTA DE LOS WIDGETS
   final List<Widget> widgetsChildren = [
     HomesTrips(),
     SearchTrips(),
     ProfileTrips()
   ];
 
+//FUNCION QUE MANEJA LA LOGICA
   void onTapTapped(int index){
+      //LA FUNCION SETSTATE NOS AYUDA A CAPTURAR EL ESTADO DE
+      // NUESTRO WIDGET Y LE DEFINIMOS UNA FUNCION QUE CAMBIE EL INDEX DE NUESTRO MENU
       setState((){
         indexTap = index;
       });
@@ -29,15 +34,21 @@ class _AppTrips extends State<AppTrips>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //DEFINIMOS QUE NOS MUESTRE EN EL BODY LA LISTA DE WIDGETS
+      //Y LA LISTA DEVOLERA SEGUN EL INDICE
       body: widgetsChildren[indexTap],
       bottomNavigationBar: Theme(
+        //estilo del menu/bottonnavigationbar
         data: Theme.of(context).copyWith(
           canvasColor: Colors.white,
-          primaryColor: Colors.red
+          primaryColor: Colors.tealAccent
         ),
         child: BottomNavigationBar(
+          //DEFINIMOS QUE LA FUNCION ESTARA ANCLADA CON NUESTRO MENU
           onTap: onTapTapped,
+          //EL INDICE SERA EL QUE TENGAMOS EN NUESTRA VARIABLE
           currentIndex: indexTap,
+          //definimos los items de nuestro menu
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),

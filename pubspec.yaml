@@ -38,7 +38,9 @@ flutter:
     - assets/img/hxh.png
     - assets/img/snk.png
     - assets/img/naruto.png
-
+    - assets/img/mountain.jpeg
+    - assets/img/river.jpeg
+    - assets/img/user.png
 
   fonts:
     - family: Lato
