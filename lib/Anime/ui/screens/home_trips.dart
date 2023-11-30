@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'description_place.dart';
-import 'review_list.dart';
+import '../widgets/description_place.dart';
+import 'package:my_app/Anime/ui/widgets/review_list.dart';
 import 'header_appbar.dart';
 
 class HomesTrips extends StatelessWidget{

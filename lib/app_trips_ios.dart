@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 import "package:flutter/cupertino.dart";
-import 'home_trips.dart';
-import 'search_trips.dart';
-import 'profile_trips.dart';
+import 'Anime/ui/screens/home_trips.dart';
+import 'Anime/ui/screens/search_trips.dart';
+import 'package:my_app/User/ui/screens/profile_trips.dart';
 import 'erro404.dart';
 
 class PlatziTripsCupertino extends StatelessWidget {

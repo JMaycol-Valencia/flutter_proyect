@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'anime.dart';
+import 'package:my_app/Anime/model/anime.dart';
 import 'profile_anime_info.dart';
 import 'profile_anime.dart';
 

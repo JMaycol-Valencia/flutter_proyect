@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'anime.dart';
-import 'floating_btn.dart';
+import 'package:my_app/Anime/model/anime.dart';
+import 'package:my_app/widgets/floating_btn.dart';
 
 class ProfileAnineInfo extends StatelessWidget {
 

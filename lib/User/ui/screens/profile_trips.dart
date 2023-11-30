@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'profile_background.dart';
+import 'package:my_app/User/ui/widgets/profile_background.dart';
 import 'profile_header.dart';
-import 'profile_animes_list.dart';
+import 'package:my_app/User/ui/widgets/profile_animes_list.dart';
 
 class ProfileTrips extends StatelessWidget{
   @override

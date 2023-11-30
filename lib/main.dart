@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:my_app/review_list.dart';
-import 'description_place.dart';
-import 'review.dart'; 
-import 'gradient_back.dart';
-import 'card_image.dart';
-import 'header_appbar.dart';
-import 'home_trips.dart';
+import 'package:my_app/Anime/ui/widgets/review_list.dart';
+import 'Anime/ui/widgets/description_place.dart';
+import 'package:my_app/Anime/ui/widgets/review.dart'; 
+import 'package:my_app/widgets/gradient_back.dart';
+import 'package:my_app/Anime/ui/widgets/card_image.dart';
+import 'Anime/ui/screens/header_appbar.dart';
+import 'Anime/ui/screens/home_trips.dart';
 import 'app_trips.dart';
 
 void main() {

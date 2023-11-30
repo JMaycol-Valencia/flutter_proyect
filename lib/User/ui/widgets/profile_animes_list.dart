@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'profile_anime.dart';
-import 'anime.dart';
+import 'package:my_app/Anime/model/anime.dart';
 
 class ProfileAnimesList extends StatelessWidget {
 
