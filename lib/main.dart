@@ -13,6 +13,7 @@ import 'app_trips.dart';
 import 'package:my_app/Anime/bloc/bloc_anime.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:my_app/User/ui/screens/sign_in_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: AppTrips()
+      home: SignInScreen(),
+      //AppTrips()
     ));
   }
 }

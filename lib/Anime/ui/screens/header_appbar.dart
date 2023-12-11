@@ -7,9 +7,10 @@ class HeaderAppBar extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    var height = 250.0;
     return Stack(
       children: [
-        GradientBack("ANIWIKI"),
+        GradientBack("ANIWIKI",height),
         CardImageList()
       ],
     );

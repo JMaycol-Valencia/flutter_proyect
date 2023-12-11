@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:my_app/firebase_options.dart';
+import 'package:my_app/Anime/bloc/bloc_anime.dart';
 
 class UserInfo extends StatelessWidget {
+
 
   String imgProfile;
   String name;
