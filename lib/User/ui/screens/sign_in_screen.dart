@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/app_trips_ios.dart';
+import 'package:my_app/app_trips.dart';
 import 'package:my_app/widgets/button_green.dart';
 import 'package:my_app/widgets/gradient_back.dart';
-import 'package:my_app/widgets/button_green.dart';
 import 'package:auth_buttons/auth_buttons.dart';
+import 'package:my_app/User/repository/auth_repository.dart';
+import 'package:my_app/User/bloc/bloc_user.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -13,11 +18,28 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreen extends State<SignInScreen> {
+  late UserBloc userBloc;
   @override
   Widget build(BuildContext context) {
     // en un futuro aca alojaremos nuestra logicca del screen
-    return sigInGoogleUI();
+    userBloc = BlocProvider.of(context);
+    return _handleCurrentSession();
   }
+
+  Widget _handleCurrentSession() {
+  return StreamBuilder(
+    stream: userBloc.authStatus,
+    builder: (BuildContext context, AsyncSnapshot snapshot) {
+      if (!snapshot.hasData || snapshot.hasError) {
+        print("No hay datos en el snapshot o hay un error.");
+        return sigInGoogleUI();
+      } else {
+        print("Hay datos en el snapshot. Usuario: ${snapshot.data.displayName}");
+        return AppTrips();
+      }
+    },
+  );
+}
 
   Widget sigInGoogleUI() {
     //double.infinity nos ayuda a tener cubierta toda la pantalla como parametro
@@ -30,7 +52,7 @@ class _SignInScreen extends State<SignInScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 "Bienvenido\n De Nuevo",
                 style: TextStyle(
                     fontSize: 37.0,
@@ -39,9 +61,35 @@ class _SignInScreen extends State<SignInScreen> {
                     fontWeight: FontWeight.bold),
               ),
               ButtonGreen(
-                  text: "Login", onPressed: () {}, height: 50.0, width: 300.0),
-              GoogleAuthButton(onPressed: () {},themeMode: ThemeMode.light,),
-              FacebookAuthButton(onPressed: () {})
+                  text: "Login",
+                  onPressed: () {
+                    // ignore: avoid_print
+                    userBloc.signIn().then((UserCredential user) =>
+                        print("El usuario es ${user.user?.displayName}"));
+                  },
+                  height: 50.0,
+                  width: 300.0),
+              GoogleAuthButton(
+                  onPressed: () {
+                    userBloc.signIn().then((UserCredential user) =>
+                        print("El usuario es ${user.user?.displayName}"));
+                  },
+                  style: const AuthButtonStyle(
+                      buttonType: AuthButtonType.secondary,
+                      iconType: AuthIconType.outlined,
+                      padding: EdgeInsets.all(18.0),
+                      margin: EdgeInsets.all(10.0),
+                      elevation: 10.0),
+                  themeMode: ThemeMode.light),
+              FacebookAuthButton(
+                  onPressed: () {},
+                  style: const AuthButtonStyle(
+                      buttonType: AuthButtonType.secondary,
+                      iconType: AuthIconType.outlined,
+                      padding: EdgeInsets.all(18.0),
+                      margin: EdgeInsets.all(10.0),
+                      elevation: 10.0),
+                  themeMode: ThemeMode.light)
             ],
           )
         ],

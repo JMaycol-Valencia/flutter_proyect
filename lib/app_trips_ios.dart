@@ -5,7 +5,7 @@ import 'Anime/ui/screens/search_trips.dart';
 import 'package:my_app/User/ui/screens/profile_trips.dart';
 import 'erro404.dart';
 
-class PlatziTripsCupertino extends StatelessWidget {
+class AppTripsIos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
