@@ -17,7 +17,14 @@ class FirebaseAuthAPI{
       idToken: googleAuth?.idToken,
     );
 
-    // Once signed in, return the UserCredential
+    // retorna el usuario
     return await _firebaseAuthApi.signInWithCredential(credential);
   }
+
+  singOut() async{
+    await _firebaseAuthApi.signOut().then((onValue) => print("Sesion Cerrada de Firebase"));
+    googleSignIn.signOut();
+    print("Sesiones cerradas");
+  }
+
 }

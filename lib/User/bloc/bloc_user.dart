@@ -8,26 +8,32 @@ class UserBloc implements Bloc {
 
   // Flujo de datos - Streams
   // Stream - firebase
+  //StreamController
   Stream<User?> streamFirebase = FirebaseAuth.instance.authStateChanges();
+  //metodo que monitorea el estado de la sesion
   Stream<User?> get authStatus => streamFirebase;
 
-  // Constructor
-  UserBloc() {
-    // Inicializar Firebase en el constructor
-    initializeFirebase();
-  }
+  // // Constructor y funcion que nos ayudara a comprobar que firebase se inicialize
+  // UserBloc() {
+  //   // Inicializar Firebase en el constructor
+  //   initializeFirebase();
+  // }
 
-  Future<void> initializeFirebase() async {
-    // Asegúrate de que Firebase se inicialice solo una vez
-    if (Firebase.apps.isEmpty) {
-      await Firebase.initializeApp();
-    }
-  }
+  // Future<void> initializeFirebase() async {
+  //   // Asegúrate de que Firebase se inicialice solo una vez
+  //   if (Firebase.apps.isEmpty) {
+  //     await Firebase.initializeApp();
+  //   }
+  // }
 
   // CASOS DE USO
   // 1.- Sing In a la aplicación google
   Future<UserCredential> signIn() {
     return _auth_repository.singInFirebase();
+  }
+
+  signOut(){
+    _auth_repository.signOut();
   }
 
   @override

@@ -27,6 +27,7 @@ class _SignInScreen extends State<SignInScreen> {
   }
 
   Widget _handleCurrentSession() {
+    //StreamBuilder
   return StreamBuilder(
     stream: userBloc.authStatus,
     builder: (BuildContext context, AsyncSnapshot snapshot) {

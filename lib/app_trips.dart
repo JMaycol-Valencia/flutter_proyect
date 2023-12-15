@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'Anime/ui/screens/home_trips.dart';
 import 'package:my_app/User/ui/screens/profile_trips.dart';
 import 'Anime/ui/screens/search_trips.dart';
+import 'package:my_app/User/bloc/bloc_user.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class AppTrips extends StatefulWidget{
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -19,7 +22,10 @@ class _AppTrips extends State<AppTrips>{
   final List<Widget> widgetsChildren = [
     HomesTrips(),
     SearchTrips(),
-    ProfileTrips()
+    BlocProvider<UserBloc>(
+      bloc: UserBloc(),
+      child: ProfileTrips(),
+    ),
   ];
 
 //FUNCION QUE MANEJA LA LOGICA

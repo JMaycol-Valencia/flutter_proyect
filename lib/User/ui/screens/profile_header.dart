@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/User/bloc/bloc_user.dart';
 import 'package:my_app/User/ui/widgets/user_info.dart';
 import 'package:my_app/User/ui/widgets/buttons_bar.dart';
 
 class ProfileHeader extends StatelessWidget {
+  late UserBloc userBloc;
+
   @override
   Widget build(BuildContext context) {
 
