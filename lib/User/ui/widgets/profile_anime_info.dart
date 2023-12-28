@@ -38,7 +38,7 @@ class ProfileAnineInfo extends StatelessWidget {
                 ),
               ),
               Text(
-                this.anime.studio,
+                this.anime.studio as String,
                 style: TextStyle(
                     color: Color.fromRGBO(0, 0, 0, 0.4),
                     fontFamily: 'Lato',

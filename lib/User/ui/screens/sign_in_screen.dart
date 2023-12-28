@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/User/model/user.dart';
 import 'package:my_app/app_trips_ios.dart';
 import 'package:my_app/app_trips.dart';
 import 'package:my_app/widgets/button_green.dart';
@@ -64,16 +65,27 @@ class _SignInScreen extends State<SignInScreen> {
               ButtonGreen(
                   text: "Login",
                   onPressed: () {
-                    // ignore: avoid_print
-                    userBloc.signIn().then((UserCredential user) =>
-                        print("El usuario es ${user.user?.displayName}"));
+                    userBloc.signOut();
+                    userBloc.signIn().then((UserCredential user) {
+                      userBloc.updateUserData(MyUser(
+                        uid: user.user!.uid,
+                        name: user.user?.displayName ?? "",
+                        email: user.user?.email ?? "",
+                        photoURL: user.user?.photoURL ?? ""));
+                    });
                   },
                   height: 50.0,
                   width: 300.0),
               GoogleAuthButton(
                   onPressed: () {
-                    userBloc.signIn().then((UserCredential user) =>
-                        print("El usuario es ${user.user?.displayName}"));
+                    userBloc.signOut();
+                    userBloc.signIn().then((UserCredential user) {
+                      userBloc.updateUserData(MyUser(
+                        uid: user.user!.uid,
+                        name: user.user?.displayName ?? "",
+                        email: user.user?.email ?? "",
+                        photoURL: user.user?.photoURL ?? ""));
+                    });
                   },
                   style: const AuthButtonStyle(
                       buttonType: AuthButtonType.secondary,
@@ -98,3 +110,5 @@ class _SignInScreen extends State<SignInScreen> {
     );
   }
 }
+
+

@@ -22,7 +22,7 @@ class ProfileAnime extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(image)
+              image: AssetImage(image),
           ),
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           color: Colors.red,

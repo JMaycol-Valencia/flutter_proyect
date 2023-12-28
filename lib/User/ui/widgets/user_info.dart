@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:my_app/firebase_options.dart';
 import 'package:my_app/Anime/bloc/bloc_anime.dart';
+import 'package:my_app/User/model/user.dart';
 
 class UserInfo extends StatelessWidget {
+  MyUser user;
 
-
-  String imgProfile;
-  String name;
-  String email;
-
-  UserInfo(this.imgProfile, this.name, this.email);
+  UserInfo(this.user, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +27,9 @@ class UserInfo extends StatelessWidget {
           shape: BoxShape.circle,
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(imgProfile)
+              // image: AssetImage(user.photoURL)
+              //METODO NetworkImage nos ayuda a traer imagenes con flutter
+              image: NetworkImage(user.photoURL)
           )
       ),
     );
@@ -43,7 +42,7 @@ class UserInfo extends StatelessWidget {
                 bottom: 5.0
             ),
             child: Text(
-                name,
+                user.name,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
@@ -53,7 +52,7 @@ class UserInfo extends StatelessWidget {
             )
         ),
         Text(
-            email,
+            user.email,
             style: TextStyle(
                 fontSize: 15.0,
                 color: Colors.white30,

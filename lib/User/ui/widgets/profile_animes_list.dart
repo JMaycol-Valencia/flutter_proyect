@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'profile_anime.dart';
 import 'package:my_app/Anime/model/anime.dart';
+import 'package:my_app/User/model/user.dart';
 
 class ProfileAnimesList extends StatelessWidget {
 
-  Anime anime = new Anime('One Piece', 'Japan 🎌', 'Toei Animation', '1080');
-  Anime anime2 = new Anime('Shingeki no Kioji', 'Japan 🎌', 'Wit Stuio - APA', '89');
+   Anime anime = new Anime('One Piece', 'Japan 🎌', 'Toei Animation', '1080');
+   Anime anime2 = new Anime('Shingeki no Kioji', 'Japan 🎌', 'Wit Stuio - APA', '89');
+  
 
   @override
   Widget build(BuildContext context) {

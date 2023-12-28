@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:my_app/User/model/user.dart';
 import 'package:my_app/User/repository/auth_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:my_app/User/repository/cloud_firestore_repository.dart';
 
 class UserBloc implements Bloc {
   final _auth_repository = AuthRepository();
@@ -9,9 +12,8 @@ class UserBloc implements Bloc {
   // Flujo de datos - Streams
   // Stream - firebase
   //StreamController
-  Stream<User?> streamFirebase = FirebaseAuth.instance.authStateChanges();
-  //metodo que monitorea el estado de la sesion
-  Stream<User?> get authStatus => streamFirebase;
+  Stream<firebase_auth.User?> streamFirebase = FirebaseAuth.instance.authStateChanges();
+  Stream<firebase_auth.User?> get authStatus => streamFirebase;
 
   // // Constructor y funcion que nos ayudara a comprobar que firebase se inicialize
   // UserBloc() {
@@ -31,6 +33,11 @@ class UserBloc implements Bloc {
   Future<UserCredential> signIn() {
     return _auth_repository.singInFirebase();
   }
+
+  //CASO DE USO
+  // 2.- Registra al usuario en la base de datos
+  final _cloudFireStoreRepository = CloudFireStoreRepository();
+  Future<void> updateUserData(MyUser user) => _cloudFireStoreRepository.updateUserDataFirestore(user);
 
   signOut(){
     _auth_repository.signOut();
